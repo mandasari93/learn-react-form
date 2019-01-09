@@ -1,51 +1,23 @@
 import React, { Component } from "react";
 
 class Register extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-            name: "",
-            email: "",
-            password: "",
-            result: ""
-        }
+    constructor(props) {
+        super(props);
+        this.state = {  }
     }
-
-    handleNameInput = event => {
-        this.setState({ name: event.target.value })
-    }
-
-    handleEmailInput = event => {
-        this.setState({ email: event.target.value })
-    }
-
-    handlePasswordInput = event => {
-        this.setState({ password: event.target.value })
-    }
-
-    handleSubmit = event => {
-        event.preventDefault()
-        const result = `${this.state.name} ${this.state.email} ${this.state.password}`
-        this.setState({ result: result })
-    }
-
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
+    render() { 
+        return (  
+            <form onSubmit={this.handle.submit}>
                 <h3>Register</h3>
                 <label htmlFor="name">Name:</label>
-                <input type="name" placeholder="Type your name" onChange={this.handleNameInput}/>
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" placeholder="Type your email" onChange={this.handleEmailInput} />
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" placeholder="Make it secure" onChange={this.handlePasswordInput} />
-                    <input type="submit" value="Register" />
-
-                    <p>{this.state.result}</p>
-      </form>
-              );
-            }
-          }
-          
+                <input type="name" placeholder="Type your name" />
+                <label htmlFor="email">Email:</label>
+                <input type="email" placeholder="Type your email" />
+                <label htmlFor="password" placeholder="Make it secure"></label>
+                
+            </form>
+        );
+    }
+}
+ 
 export default Register;
