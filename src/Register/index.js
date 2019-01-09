@@ -19,6 +19,10 @@ class Register extends Component {
         this.setState({email: event.target.value})
     }
 
+    hanldePasswordInput = event => {
+        this.setState({password: event.target.value})
+    }
+
     render() { 
         return (  
             <form onSubmit={this.handle.submit}>
