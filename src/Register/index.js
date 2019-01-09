@@ -3,8 +3,20 @@ import React, { Component } from "react";
 class Register extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            name: "",
+            email: "",
+            password: "",
+            result: ""
+         }
     }
+
+    handleNameInput = event => {
+        this.setState({name: event.taget.value})
+    }
+
+    
+
     render() { 
         return (  
             <form onSubmit={this.handle.submit}>
@@ -14,7 +26,7 @@ class Register extends Component {
                 <label htmlFor="email">Email:</label>
                 <input type="email" placeholder="Type your email" />
                 <label htmlFor="password" placeholder="Make it secure"></label>
-                
+
             </form>
         );
     }
