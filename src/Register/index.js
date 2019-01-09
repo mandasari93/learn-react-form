@@ -15,7 +15,9 @@ class Register extends Component {
         this.setState({name: event.taget.value})
     }
 
-    
+    handleEmailInput = event => {
+        this.setState({email: event.target.value})
+    }
 
     render() { 
         return (  
