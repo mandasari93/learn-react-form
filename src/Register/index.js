@@ -23,15 +23,25 @@ class Register extends Component {
         this.setState({password: event.target.value})
     }
 
+    handleSubmit = event => {
+        event.preventDefault()
+        const result = `${this.state.name} ${this.state.email} ${this.state.password}`
+        this.setState({ result: result })
+    }
+
     render() { 
         return (  
-            <form onSubmit={this.handle.submit}>
+            <form onSubmit={this.handleSubmit}>
                 <h3>Register</h3>
                 <label htmlFor="name">Name:</label>
                 <input type="name" placeholder="Type your name" />
+                <br/>
                 <label htmlFor="email">Email:</label>
                 <input type="email" placeholder="Type your email" />
-                <label htmlFor="password" placeholder="Make it secure"></label>
+                <br/>
+                <label htmlFor="password">Password:</label>
+                <input type="password" placeholder="Make it secure" />
+                <br/>
                 <input type="submit" value="Register"/>
 
             </form>
