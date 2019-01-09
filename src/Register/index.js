@@ -32,6 +32,7 @@ class Register extends Component {
                 <label htmlFor="email">Email:</label>
                 <input type="email" placeholder="Type your email" />
                 <label htmlFor="password" placeholder="Make it secure"></label>
+                <input type="submit" value="Register"/>
 
             </form>
         );
