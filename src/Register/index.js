@@ -12,7 +12,7 @@ class Register extends Component {
     }
 
     handleNameInput = event => {
-        this.setState({name: event.taget.value})
+        this.setState({name: event.target.value})
     }
 
     handleEmailInput = event => {
@@ -23,29 +23,28 @@ class Register extends Component {
         this.setState({password: event.target.value})
     }
 
-    handleSubmit = event => {
+    handleRegisterSubmit = event => {
         event.preventDefault()
         const result = `${this.state.name} ${this.state.email} ${this.state.password}`
         this.setState({ result: result })
     }
 
-    render() { 
-        return (  
-            <form onSubmit={this.handleSubmit}>
-                <h3>Register</h3>
-                <label htmlFor="name">Name:</label>
-                <input type="name" placeholder="Type your name" />
-                <br/>
-                <label htmlFor="email">Email:</label>
-                <input type="email" placeholder="Type your email" />
-                <br/>
-                <label htmlFor="password">Password:</label>
-                <input type="password" placeholder="Make it secure" />
-                <br/>
-                <input type="submit" value="Register"/>
-
-            </form>
-        );
+    render() {
+        return (
+                <form onSubmit={this.handleRegisterSubmit}>
+                    <h3>Register</h3>
+                    <label htmlFor="name">Name:</label>
+                    <input type="name" placeholder="Type your name" onChange={this.handleNameInput} />
+                    <br />
+                    <label htmlFor="email">Email:</label>
+                    <input type="email" placeholder="Type your email" onChange={this.handleEmailInput} />
+                    <br />
+                    <label htmlFor="password">Password:</label>
+                    <input type="password" placeholder="Make it secure" onChange={this.handlePasswordInput} />
+                    <br />
+                    <input type="submit" value="Register" />
+                </form>
+        )
     }
 }
  
