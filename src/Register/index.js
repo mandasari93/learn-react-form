@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
 class Register extends Component {
   constructor(props) {
@@ -32,33 +33,24 @@ class Register extends Component {
   };
 
   render() {
-    return (
-      <form onSubmit={this.handleRegisterSubmit}>
-        <h3>Register</h3>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="name"
-          placeholder="Type your name"
-          onChange={this.handleNameInput}
-        />
-        <br />
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          placeholder="Type your email"
-          onChange={this.handleEmailInput}
-        />
-        <br />
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          placeholder="Make it secure"
-          onChange={this.handlePasswordInput}
-        />
-        <br />
-        <input type="submit" value="Register" />
-      </form>
-    );
+      return <form>
+          <FormGroup>
+            <Label for="name">Name</Label>
+            <Input type="name" name="name" id="name" placeholder="Type your name" onChange={this.handleNameInput} />
+          </FormGroup>
+
+          <FormGroup>
+            <Label for="email">Email</Label>
+            <Input type="email" name="email" id="email" placeholder="Type your email" onChange={this.handleEmailInput} />
+          </FormGroup>
+
+          <FormGroup>
+            <Label for="password">Password</Label>
+            <Input type="password" name="password" id="password" placeholder="Make it secure" onChange={this.handlePasswordInput} />
+          </FormGroup>
+
+          <Button color="primary">Register</Button>
+        </form>;
   }
 }
 
