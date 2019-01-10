@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Register from "./Register";
+import Register from "./components/Register";
 
 class App extends Component {
   render() {
