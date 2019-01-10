@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { Form, FormGroup, Label, Input } from "reactstrap";
 
 class Register extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class Register extends Component {
       name: "",
       email: "",
       pass: "",
-      result: ""
+      result: []
     };
   }
 
@@ -26,8 +26,18 @@ class Register extends Component {
 
   handleRegisterSubmit = event => {
     event.preventDefault();
-    const result = `${this.state.name} ${this.state.email} ${this.state.pass}`;
-    this.setState({ result: result });
+    const value = {
+      name: this.state.name,
+      email: this.state.email,
+      pass: this.state.pass
+    };
+
+    this.setState(prevState => ({
+      result: [...prevState.result, value],
+      name: "",
+      email: "",
+      pass: ""
+    }));
   };
 
   render() {
@@ -40,6 +50,7 @@ class Register extends Component {
             name="name"
             id="name"
             placeholder="Type your name"
+            value={this.state.name}
             onChange={this.handleNameInput}
           />
         </FormGroup>
@@ -51,6 +62,7 @@ class Register extends Component {
             name="email"
             id="email"
             placeholder="Type your email"
+            value={this.state.email}
             onChange={this.handleEmailInput}
           />
         </FormGroup>
@@ -62,12 +74,12 @@ class Register extends Component {
             name="password"
             id="password"
             placeholder="Make it secure"
+            value={this.state.pass}
             onChange={this.handlePasswordInput}
           />
         </FormGroup>
 
         <input type="submit" value="Register" />
-
       </Form>
     );
   }
