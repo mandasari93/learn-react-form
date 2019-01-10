@@ -32,7 +32,7 @@ class Register extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleRegisterSubmit}>
+      <Form onSubmit={this.handleRegisterSubmit}>
         <FormGroup>
           <Label for="name">Name</Label>
           <Input
@@ -68,7 +68,7 @@ class Register extends Component {
 
         <input type="submit" value="Register" />
 
-      </form>
+      </Form>
     );
   }
 }
