@@ -7,7 +7,7 @@ class Register extends Component {
     this.state = {
       name: "",
       email: "",
-      password: "",
+      pass: "",
       result: ""
     };
   }
@@ -20,37 +20,56 @@ class Register extends Component {
     this.setState({ email: event.target.value });
   };
 
-  hanldePasswordInput = event => {
-    this.setState({ password: event.target.value });
+  handlePasswordInput = event => {
+    this.setState({ pass: event.target.value });
   };
 
   handleRegisterSubmit = event => {
     event.preventDefault();
-    const result = `${this.state.name} ${this.state.email} ${
-      this.state.password
-    }`;
+    const result = `${this.state.name} ${this.state.email} ${this.state.pass}`;
     this.setState({ result: result });
   };
 
   render() {
-      return <form>
-          <FormGroup>
-            <Label for="name">Name</Label>
-            <Input type="name" name="name" id="name" placeholder="Type your name" onChange={this.handleNameInput} />
-          </FormGroup>
+    return (
+      <form onSubmit={this.handleRegisterSubmit}>
+        <FormGroup>
+          <Label for="name">Name</Label>
+          <Input
+            type="name"
+            name="name"
+            id="name"
+            placeholder="Type your name"
+            onChange={this.handleNameInput}
+          />
+        </FormGroup>
 
-          <FormGroup>
-            <Label for="email">Email</Label>
-            <Input type="email" name="email" id="email" placeholder="Type your email" onChange={this.handleEmailInput} />
-          </FormGroup>
+        <FormGroup>
+          <Label for="email">Email</Label>
+          <Input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Type your email"
+            onChange={this.handleEmailInput}
+          />
+        </FormGroup>
 
-          <FormGroup>
-            <Label for="password">Password</Label>
-            <Input type="password" name="password" id="password" placeholder="Make it secure" onChange={this.handlePasswordInput} />
-          </FormGroup>
+        <FormGroup>
+          <Label for="password">Password</Label>
+          <Input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Make it secure"
+            onChange={this.handlePasswordInput}
+          />
+        </FormGroup>
 
-          <Button color="primary">Register</Button>
-        </form>;
+        <input type="submit" value="Register" />
+
+      </form>
+    );
   }
 }
 
