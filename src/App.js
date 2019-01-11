@@ -32,8 +32,8 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">Home</NavbarBrand>
+          <Navbar color="dark" dark expand="md">
+            <NavbarBrand tag={Link} to="/">Home</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
