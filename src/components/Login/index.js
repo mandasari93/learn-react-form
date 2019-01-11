@@ -54,7 +54,7 @@ class Register extends Component {
             type="password"
             name="password"
             id="password"
-            placeholder="Make it secure"
+            placeholder="Type your password"
             value={this.state.pass}
             onChange={this.handlePasswordInput}
           />

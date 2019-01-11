@@ -1,56 +1,57 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import styled from "styled-components";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink
+} from 'reactstrap';
 
 
 import Register from "./components/Register";
 import Login from "./components/Login";
 
-const NavBar = styled.nav`
-  font-family: "Dosis", sans-serif;
-  display: flex;
-  justify-content: center;
-  background: tomato;
-  padding: 30px;
-  font-weight: 600;
-  ul {
-    text-decoration: none;
-    display: flex;
-    flex-direction: row;
-  }
-  li {
-    list-style: none;
-    margin: 0px 30px 0px 30px;
-  }
-  .linkStyle {
-    color: #ffffff;
-    text-decoration: none;
-  }
-`;
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
   render() {
     return (
       <Router>
         <div>
-          <NavBar>
-            <ul>
-              <li>
-                <Link className="linkStyle" to="/Register">
-                  Register
-                </Link>
-              </li>
-              <li>
-                <Link className="linkStyle" to="/Login">
-                  Login
-                </Link>
-              </li>
-            </ul>
-          </NavBar>
+          <Navbar color="light" light expand="md">
+            <NavbarBrand href="/">Home</NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <NavLink tag={Link} to="/Register">Register</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink tag={Link} to="/Login">Login</NavLink>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Navbar>
+          <switch>
           <Route path="/Register" exact component={Register} />
           <Route path="/Login" component={Login} />
+            </switch>
         </div>
-      </Router>
+        </Router>
     );
   }
 }
