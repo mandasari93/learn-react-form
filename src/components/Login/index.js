@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, FormGroup, Label, Input } from "reactstrap";
+import "./style.css";
 
 class Register extends Component {
   constructor(props) {
@@ -34,8 +35,9 @@ class Register extends Component {
   };
 
   render() {
-    return (
-      <div>
+      return (
+        <container class="login">
+      <div class="login-form">
         <Form onSubmit={this.handleRegisterSubmit}>
           <FormGroup>
             <Label for="email">Email:</Label>
@@ -63,7 +65,8 @@ class Register extends Component {
 
           <input type="submit" value="Login" />
         </Form>
-      </div>
+              </div>
+              </container>
     );
   }
 }
