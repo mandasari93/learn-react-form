@@ -6,6 +6,7 @@ class Register extends Component {
     super(props);
     this.state = {
       name: "",
+      user:"",
       email: "",
       pass: "",
       result: []
@@ -14,6 +15,10 @@ class Register extends Component {
 
   handleNameInput = event => {
     this.setState({ name: event.target.value });
+  };
+
+  handleUserInput = event => {
+    this.setState({ user: event.target.value });
   };
 
   handleEmailInput = event => {
@@ -28,6 +33,7 @@ class Register extends Component {
     event.preventDefault();
     const value = {
       name: this.state.name,
+      user: this.state.user,
       email: this.state.email,
       pass: this.state.pass
     };
@@ -35,6 +41,7 @@ class Register extends Component {
     this.setState(prevState => ({
       result: [...prevState.result, value],
       name: "",
+      user: "",
       email: "",
       pass: ""
     }));
@@ -44,19 +51,31 @@ class Register extends Component {
     return (
       <Form onSubmit={this.handleRegisterSubmit}>
         <FormGroup>
-          <Label for="name">Name</Label>
+          <Label for="name">Fullname:</Label>
           <Input
             type="name"
             name="name"
             id="name"
-            placeholder="Type your name"
+            placeholder="Type your Fullname"
             value={this.state.name}
             onChange={this.handleNameInput}
           />
         </FormGroup>
 
         <FormGroup>
-          <Label for="email">Email</Label>
+          <Label for="user">Username:</Label>
+          <Input
+            type="user"
+            name="user"
+            id="user"
+            placeholder="Type your Username"
+            value={this.state.user}
+            onChange={this.handleUserInput}
+          />
+        </FormGroup>
+
+        <FormGroup>
+          <Label for="email">Email:</Label>
           <Input
             type="email"
             name="email"
@@ -68,7 +87,7 @@ class Register extends Component {
         </FormGroup>
 
         <FormGroup>
-          <Label for="password">Password</Label>
+          <Label for="password">Password:</Label>
           <Input
             type="password"
             name="password"

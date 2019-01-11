@@ -37,7 +37,7 @@ class Register extends Component {
       return (
         <Form onSubmit={this.handleRegisterSubmit}>
         <FormGroup>
-          <Label for="email">Email</Label>
+          <Label for="email">Email:</Label>
           <Input
             type="email"
             name="email"
@@ -49,7 +49,7 @@ class Register extends Component {
         </FormGroup>
 
         <FormGroup>
-          <Label for="password">Password</Label>
+          <Label for="password">Password:</Label>
           <Input
             type="password"
             name="password"
