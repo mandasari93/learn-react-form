@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, FormGroup, Label, Input } from "reactstrap";
-import "./style.css"
+import "./style.css";
 
 class Register extends Component {
   constructor(props) {
@@ -51,60 +51,60 @@ class Register extends Component {
   render() {
     return (
       <container class="register">
-      <div class="register-form">
-        <Form onSubmit={this.handleRegisterSubmit}>
-          <FormGroup>
-            <Label for="name">Fullname:</Label>
-            <Input
-              type="name"
-              name="name"
-              id="name"
-              placeholder="Type your Fullname"
-              value={this.state.name}
-              onChange={this.handleNameInput}
-            />
-          </FormGroup>
+        <div class="register-form">
+          <Form onSubmit={this.handleRegisterSubmit}>
+            <FormGroup>
+              <Label for="name">Fullname:</Label>
+              <Input
+                type="name"
+                name="name"
+                id="name"
+                placeholder="Type your Fullname"
+                value={this.state.name}
+                onChange={this.handleNameInput}
+              />
+            </FormGroup>
 
-          <FormGroup>
-            <Label for="user">Username:</Label>
-            <Input
-              type="user"
-              name="user"
-              id="user"
-              placeholder="Type your Username"
-              value={this.state.user}
-              onChange={this.handleUserInput}
-            />
-          </FormGroup>
+            <FormGroup>
+              <Label for="user">Username:</Label>
+              <Input
+                type="user"
+                name="user"
+                id="user"
+                placeholder="Type your Username"
+                value={this.state.user}
+                onChange={this.handleUserInput}
+              />
+            </FormGroup>
 
-          <FormGroup>
-            <Label for="email">Email:</Label>
-            <Input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Type your email"
-              value={this.state.email}
-              onChange={this.handleEmailInput}
-            />
-          </FormGroup>
+            <FormGroup>
+              <Label for="email">Email:</Label>
+              <Input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Type your email"
+                value={this.state.email}
+                onChange={this.handleEmailInput}
+              />
+            </FormGroup>
 
-          <FormGroup>
-            <Label for="password">Password:</Label>
-            <Input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Make it secure"
-              value={this.state.pass}
-              onChange={this.handlePasswordInput}
-            />
-          </FormGroup>
+            <FormGroup>
+              <Label for="password">Password:</Label>
+              <Input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Make it secure"
+                value={this.state.pass}
+                onChange={this.handlePasswordInput}
+              />
+            </FormGroup>
 
-          <input type="submit" value="Register" />
-        </Form>
+            <input type="submit" value="Register" />
+          </Form>
         </div>
-        </container>
+      </container>
     );
   }
 }

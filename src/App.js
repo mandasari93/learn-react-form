@@ -13,6 +13,7 @@ import {
 
 import Register from "./components/Register";
 import Login from "./components/Login";
+import Home from "./components/Home";
 
 class App extends Component {
   constructor(props) {
@@ -47,8 +48,9 @@ class App extends Component {
             </Collapse>
           </Navbar>
           <switch>
+            <Route path="/" exact component={Home} />
           <Route path="/Register" exact component={Register} />
-          <Route path="/Login" component={Login} />
+          <Route path="/Login" exact component={Login} />
             </switch>
         </div>
         </Router>
