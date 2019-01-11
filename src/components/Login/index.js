@@ -5,16 +5,11 @@ class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
       email: "",
       pass: "",
       result: []
     };
   }
-
-  handleNameInput = event => {
-    this.setState({ name: event.target.value });
-  };
 
   handleEmailInput = event => {
     this.setState({ email: event.target.value });
@@ -27,34 +22,20 @@ class Register extends Component {
   handleRegisterSubmit = event => {
     event.preventDefault();
     const value = {
-      name: this.state.name,
       email: this.state.email,
       pass: this.state.pass
     };
 
     this.setState(prevState => ({
       result: [...prevState.result, value],
-      name: "",
       email: "",
       pass: ""
     }));
   };
 
   render() {
-    return (
-      <Form onSubmit={this.handleRegisterSubmit}>
-        <FormGroup>
-          <Label for="name">Name</Label>
-          <Input
-            type="name"
-            name="name"
-            id="name"
-            placeholder="Type your name"
-            value={this.state.name}
-            onChange={this.handleNameInput}
-          />
-        </FormGroup>
-
+      return (
+        <Form onSubmit={this.handleRegisterSubmit}>
         <FormGroup>
           <Label for="email">Email</Label>
           <Input
@@ -79,7 +60,7 @@ class Register extends Component {
           />
         </FormGroup>
 
-        <input type="submit" value="Register" />
+        <input type="submit" value="Login" />
       </Form>
     );
   }

@@ -10,7 +10,7 @@ const NavBar = styled.nav`
   font-family: "Dosis", sans-serif;
   display: flex;
   justify-content: center;
-  background: #ef6c57;
+  background: tomato;
   padding: 30px;
   font-weight: 600;
   ul {
